@@ -1,0 +1,27 @@
+##Postman
+
+#POST a drink (insert)
+POST: http://127.0.0.1:5000/drinks
+#Body of json type:
+{
+    "name": "Cola"
+    "description": "delicious"
+}
+
+#GET all drinks
+GET: http://127.0.0.1:5000/drinks
+
+...info.
+
+#Delete a specified drink (delete drink #3 in this case)
+DELETE: http://127.0.0.1:5000/drinks/3 
+
+...deleted or not deleted.
+
+#PUT a drink (update the characteristics of a drink)
+PUT: http://127.0.0.1:5000/drinks/1
+#Body of json type
+{
+    "name": "Dr Pepper"
+    "description": "delicious"
+}

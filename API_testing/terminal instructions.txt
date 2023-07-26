@@ -1,0 +1,37 @@
+## SETTING UP VIRTUAL ENVIRONMENT (only run once)
+
+# create a virtual environment
+python3 -m venv .venv 
+# activate the virtual environment
+.venv/bin/activate
+# install flask
+pip3 install flask
+# install sqlalchemy
+pip3 install flask-sqlalchemy
+# output dependencies onto a file (optional)
+pip3 freeze > requirements.txt
+# create your code file
+touch application.py
+
+# write / modify code ...
+
+## CREATE ENVIRONMENT VARIABLES (must rerun each time you open your terminal/project)
+export FLASK_APP=application.py
+export FLASK_ENV=development
+
+## DATABASE MODEL SETUP
+
+# open interactive mode
+python3
+# import
+from application import db
+db.create_all()
+# import drink
+from application import Drink
+# create new drink object
+drink = Drink(name="Grape Soda", description="Tastes like grapes")
+# add new drink object onto table
+db.session.add(drink)
+db.session.commit()
+# GET all drinks
+Drink.query.all()
